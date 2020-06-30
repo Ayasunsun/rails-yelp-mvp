@@ -1,0 +1,2 @@
+class Restraurant < ApplicationRecord
+end
