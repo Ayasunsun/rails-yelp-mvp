@@ -12,22 +12,22 @@
 
 ActiveRecord::Schema.define(version: 2020_06_30_120634) do
 
-  create_table "restraurants", force: :cascade do |t|
+  create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "adress"
-    t.integer "phone_number"
+    t.string "address"
+    t.string "phone_number"
     t.string "category"
-    t.string "reviews"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "review", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.integer "rating"
-    t.string "reference"
+    t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
 end
